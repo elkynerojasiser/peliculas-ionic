@@ -47,10 +47,12 @@
                 </ion-title>
                 <ion-row>
                     <ion-col>
-                        <iframe width="100%" height="auto" :src="`https://www.youtube.com/embed/${trailer}`" 
-                        :title="movie.title" 
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-                        </iframe>
+                        <YouTube 
+                            width="320"
+                            v-if="trailer"
+                            :src="`https://www.youtube.com/watch?v=${trailer}`" 
+                            @ready="onReady"
+                            ref="youtube" />
                     </ion-col>
                 </ion-row>
             </ion-content>
@@ -62,7 +64,8 @@
 import MovieServices from "@/services/MovieServices"
 import { useRoute } from 'vue-router'
 import HeaderApp from "@/components/HeaderApp.vue"
-import { IonContent, IonRow, IonCol, IonImg, IonButton, IonButtons, IonModal, IonToolbar, IonTitle } from '@ionic/vue';
+import { IonContent, IonRow, IonCol, IonImg, IonButton, IonModal, IonToolbar, IonTitle } from '@ionic/vue';
+import YouTube from 'vue3-youtube'
 export default {
     name : 'MovieDetail',
     components: {
@@ -72,10 +75,10 @@ export default {
         IonCol,
         IonImg,
         IonButton,
-        IonButtons,
         IonModal,
         IonToolbar,
-        IonTitle
+        IonTitle,
+        YouTube
     },
     data() {
         return {
@@ -95,6 +98,11 @@ export default {
         if(this.videos.length > 0){
             this.trailer = this.videos[0].key
         }
+    },
+    methods: {
+        onReady() {
+            this.$refs.youtube.playVideo()
+        },
     }
 }
 
