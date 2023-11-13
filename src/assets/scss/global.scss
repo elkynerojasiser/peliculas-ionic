@@ -76,3 +76,36 @@
     background-color: #ffffff;
     width: 100%;
 }
+
+.detail-container {
+    &__description {
+        padding: 0 15px 0 15px;
+        &__title {
+            text-align: center;
+        }
+        &__text {
+            font-size: 0.5rem;
+            max-height: 80px;
+            overflow-y: scroll;
+        }
+    }
+
+    &__companies {
+        padding: 0 15px 0 15px;
+        &__image {
+            width: 50px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.detail-container__genres {
+    padding: 0 15px 0 15px;
+    &__chip {
+        font-size: 0.6rem;
+    }
+}
+
+.detail-container__trailer {
+    margin-top: 10px;
+}
