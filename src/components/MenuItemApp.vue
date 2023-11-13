@@ -3,7 +3,7 @@
         <ion-item href="/">
             <ion-label>Inicio</ion-label>
         </ion-item>
-        <ion-item v-for="genre in genres" :key="genre.id" href="">
+        <ion-item v-for="genre in genres" :key="genre.id" :href="`/movies/genre/${genre.id}`">
             <ion-label>{{ genre.name }}</ion-label>
         </ion-item>
     </ion-list>

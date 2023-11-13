@@ -86,6 +86,9 @@ export default {
         .catch(error => {
             console.log(error)
         })
-    }
+    },
 
+    baseImgUrl : () => {
+        return BASE_IMG
+    }
 }

@@ -44,7 +44,7 @@ export default {
                     image: '../assets/img/cartelera.jpg',
                     name: "Cartelera",
                     id: 'now_playing',
-                    description: 'now_playing'
+                    description: ''
                 },
                 {
                     image: '../assets/img/populares.jpg',
