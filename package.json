@@ -23,7 +23,8 @@
     "ionicons": "^7.0.0",
     "sass": "^1.69.5",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vue3-youtube": "^0.1.9"
   },
   "devDependencies": {
     "@capacitor/cli": "5.5.1",
